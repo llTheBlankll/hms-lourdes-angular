@@ -1,10 +1,19 @@
 :host ::ng-deep .card {
-  width: 400px;
-  height: 350px;
+  max-width: 500px;
+  max-height: 700px;
   box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.2);
   margin-top: 16px;
   padding: 20px;
   display: flex;
   flex-direction: column;
+}
+
+.lourdes-background {
+  /*noinspection CssUnknownTarget*/
+  background-image: url('/ORIGINAL BANNER.jpg');
+  /*background-image: url('/banner.jpeg');*/
+  background-size: cover;
+  background-repeat: repeat;
+  -moz-background-size: cover;
 }
 

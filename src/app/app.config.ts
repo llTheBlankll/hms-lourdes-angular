@@ -15,6 +15,7 @@ import {MessageService} from 'primeng/api';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({eventCoalescing: true}),
+    provideAnimationsAsync(),
     MessageService,
     providePrimeNG({
       theme: {
@@ -24,11 +25,10 @@ export const appConfig: ApplicationConfig = {
           cssLayer: {
             name: "primeng",
             order: "tailwind-base, primeng, tailwind-utilities"
-          }
+          },
         }
       }
     }),
-    provideAnimationsAsync(),
     provideRouter(routes), provideHttpClient(), provideApollo(() => {
       const httpLink = inject(HttpLink);
 
