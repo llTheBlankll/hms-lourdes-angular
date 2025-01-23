@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TotalCabinetsComponent } from './total-cabinets.component';
+import { TotalStorageComponent } from './total-storage.component';
 
 describe('TotalCabinetsComponent', () => {
-  let component: TotalCabinetsComponent;
-  let fixture: ComponentFixture<TotalCabinetsComponent>;
+  let component: TotalStorageComponent;
+  let fixture: ComponentFixture<TotalStorageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TotalCabinetsComponent]
+      imports: [TotalStorageComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TotalCabinetsComponent);
+    fixture = TestBed.createComponent(TotalStorageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
