@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {MedicineCardComponent} from '../../components/dashboard/medicine-card/medicine-card.component';
 import {Button} from 'primeng/button';
 import {InputText} from 'primeng/inputtext';
-import {Image} from 'primeng/image';
+import {TotalStorageComponent} from '../../components/dashboard/total-storage/total-storage.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +10,7 @@ import {Image} from 'primeng/image';
     MedicineCardComponent,
     Button,
     InputText,
-    Image
+    TotalStorageComponent
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
