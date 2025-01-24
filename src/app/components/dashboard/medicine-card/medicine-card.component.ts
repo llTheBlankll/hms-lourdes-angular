@@ -3,12 +3,13 @@ import {NgOptimizedImage} from '@angular/common';
 import {Image} from 'primeng/image';
 import {Card} from 'primeng/card';
 import {Button} from 'primeng/button';
+import {PrimeTemplate} from 'primeng/api';
 
 @Component({
   selector: 'dashboard-medicine-card',
   imports: [
     Card,
-    Button,
+    PrimeTemplate,
   ],
   templateUrl: './medicine-card.component.html',
   styleUrl: './medicine-card.component.css'
@@ -19,8 +20,11 @@ export class MedicineCardComponent {
   imageUrl?: string;
 
   @Input()
-  title?: string;
+  cardTitle: string = "";
 
   @Input()
-  description?: string;
+  description: string = "";
+
+  @Input()
+  subtitle: string = "";
 }

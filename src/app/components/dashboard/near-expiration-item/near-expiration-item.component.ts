@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import {Card} from "primeng/card";
 
 @Component({
-  selector: 'app-near-expiration-item',
-  imports: [],
+  selector: 'card-near-expiration-item',
+    imports: [
+        Card
+    ],
   templateUrl: './near-expiration-item.component.html',
   styleUrl: './near-expiration-item.component.css'
 })
