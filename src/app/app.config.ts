@@ -38,6 +38,7 @@ export const appConfig: ApplicationConfig = {
         }),
         cache: new InMemoryCache(),
       };
-    })
+    }),
+    MessageService
   ]
 };

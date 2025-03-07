@@ -6,21 +6,23 @@
       </p-image>
     </div>
     <h1 class="text-3xl mb-10 text-center">Login</h1>
-    <div class="flex-auto mb-6">
-      <p-floatlabel>
-        <input type="text" pInputText id="username" class="w-full"/>
-        <label for="username">Username</label>
-      </p-floatlabel>
-    </div>
-    <div class="flex-auto mb-6">
-      <p-floatlabel>
-        <input type="password" pInputText id="password" class="w-full"/>
-        <label for="password">Password</label>
-      </p-floatlabel>
-    </div>
-    <div class="flex justify-end">
-      <p-button label="Sign in" styleClass="w-28" severity="success">
-      </p-button>
-    </div>
+    <form [formGroup]="this.loginForm">
+      <div class="flex-auto mb-6">
+        <p-floatlabel>
+          <input type="text" pInputText id="username" class="w-full"/>
+          <label for="username">Username</label>
+        </p-floatlabel>
+      </div>
+      <div class="flex-auto mb-6">
+        <p-floatlabel>
+          <input type="password" pInputText id="password" class="w-full"/>
+          <label for="password">Password</label>
+        </p-floatlabel>
+      </div>
+      <div class="flex justify-end">
+        <p-button label="Sign in" styleClass="w-28" severity="success">
+        </p-button>
+      </div>
+    </form>
   </p-card>
 </div>

@@ -5,7 +5,6 @@ import {Avatar} from 'primeng/avatar';
 import {MenuItem} from 'primeng/api';
 import {Ripple} from 'primeng/ripple';
 import {InputText} from 'primeng/inputtext';
-import {Image} from 'primeng/image';
 import {NgClass, NgOptimizedImage} from '@angular/common';
 
 @Component({
@@ -16,7 +15,6 @@ import {NgClass, NgOptimizedImage} from '@angular/common';
     Avatar,
     Ripple,
     InputText,
-    Image,
     NgOptimizedImage,
     NgClass
   ],

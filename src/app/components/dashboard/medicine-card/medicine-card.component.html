@@ -1,12 +1,21 @@
 <p-card styleClass="h-full">
-  <ng-template #header >
-    <img [src]="imageUrl" class="h-full" alt=""/>
+  <ng-template pTemplate="header" >
+    <img [ngSrc]="(imageUrl !== undefined) ? imageUrl : 'https://picsum.photos/256/256'" class="h-full" alt="" width="256" height="256"/>
+    <p-badge [value]="quantity" styleClass="top-0">
+
+    </p-badge>
   </ng-template>
-  <ng-template #title>
+  <ng-template pTemplate="title">
     {{cardTitle}}
+    <p class="text-sm text-gray-500">
+      Expiry Date: {{expiryDate | date}}
+    </p>
   </ng-template>
   <ng-template></ng-template>
   <p class="text-sm">
     {{ description }}
+  </p>
+  <p class="text-sm mt-3">
+    Quantity
   </p>
 </p-card>

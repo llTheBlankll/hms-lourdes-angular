@@ -19,34 +19,29 @@
       </form>
       <p-button badgeSeverity="success" severity="info" label="Search" class="text-sm" outlined/>
     </div>
-    <div class="container p-2">
-      <div class="grid grid-cols-12 md:grid-cols-4 gap-4">
-        <div class="w-full">
-          <dashboard-medicine-card
-            imageUrl="https://imgs.search.brave.com/rZoGtnah92B9ENwHdV6RfkEmoEjNWwhibq1CXdEwYNs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jaHVj/aGF5c3VwZXJtYXJr/ZXQuY29tL2Nkbi9z/aG9wL3Byb2R1Y3Rz/LzExX2MzNzg2YmU0/LTliNzUtNDhkZC1i/MzhkLTBiNDczMjY4/MWE1Yy5wbmc_dj0x/NjgzNTY0NDcwJndp/ZHRoPTE0NDU"
-            description="Biogesic 50mg Tablet is used to treat acute pain, painful osteoarthritis (degeneration of joints) and primary dysmenorrhea (painful menstruation) in adolescents and adults above 12 years old."
-            cardTitle="Biogesic 50mg Tablet"/>
+    <div class="flex flex-row">
+      <div class="storage-selection flex-grow">
+        <div class="grid grid-cols-1 gap-2 p-1">
+          @if (storageLoading) {
+            <p-progress-spinner/>
+          } @else {
+            @for (storage of this.storages; track $index) {
+              <p-button label="{{ storage.name }}" icon="pi pi-box" styleClass="w-full"
+                        (onClick)="this.selectStorage(storage.id)"/>
+            }
+          }
         </div>
-        <div class="w-full">
-          <dashboard-medicine-card
-            imageUrl="https://imgs.search.brave.com/j9utzg_6b486wY4QSn5vHaXOMDnlgSaZuPL6E7zV5MI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cm9zZXBoYXJtYWN5/LmNvbS9waDEvd3At/Y29udGVudC91cGxv/YWRzLzIwMTYvMDkv/MzcyMTkucG5n"
-            cardTitle="Bioflu"
-            description="Bioflu 150mg Tablet is an antifungal medicine. It is used for the treatment of many fungal infections like Cryptococcal meningitis (fungal infection in the brain) and Coccidioidomycosis (a disease of the lungs)."
-          />
-        </div>
-        <div class="w-full">
-          <dashboard-medicine-card
-            imageUrl="https://imgs.search.brave.com/yhnIGFAOyE5SUv_Vjiy_jMl6dg4XKcCsOl1oMBTXB9Y/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zcG1j/Lmdvdi5say9wcm9k/dWN0cy9mZW5hbWF0/ZXMvbWVmZW5hbWlj/LWFjaWQ_dz02MzAm/aD02MzAmc3JjPXJl/c291cmNlcy8yMzUv/cC5qcGc"
-            cardTitle="Mefenamic Acid"
-            description="Mefenamic acid tablets are a type of non-steroidal anti-inflammatory drug (NSAID) used to manage pain and inflammation. They are commonly prescribed for conditions such as menstrual cramps, headaches, muscle pain, joint pain, and dental pain. Mefenamic acid works by blocking the production of hormones that cause inflammation and pain, specifically by inhibiting the enzyme cyclooxygenase (COX), which reduces the formation of prostaglandins involved in pain and inflammation."
-          />
-        </div>
-        <div class="w-full">
-          <dashboard-medicine-card
-            cardTitle="Amoxicillin"
-            imageUrl="https://imgs.search.brave.com/kHJ-dLpErcOfZJBp4ZRrF1zSW0XwgLIJA5GkoS9C3XE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8x/LzFlL0Ftb3hpY2ls/bGluLkpQRw"
-            description="Amoxicillin is a penicillin antibiotic used to treat bacterial infections such as tonsillitis, bronchitis, sinusitis, pneumonia, and infections of the ear, nose, throat, skin, or urinary tract.  "
-          />
+      </div>
+      <div class="container p-2 test-border">
+        <div class="grid grid-cols-1 gap-2 p-1">
+          @for (storageItem of this.storageItems; track $index) {
+            <dashboard-medicine-card
+              [cardTitle]="storageItem.medicine.name"
+              [description]="storageItem.medicine.description"
+              [isLoading]="storageItemLoading"
+              [expiryDate]="storageItem.expiryDate"
+            />
+          }
         </div>
       </div>
     </div>
